@@ -1,110 +1,39 @@
-# relogio-digital
+# Relógio Digital
 
-Projeto iniciado no curso CJRM,
-Vamos criar um relógio virtual
+Um projeto simples para construir um relógio digital usando HTML, CSS e JavaScript.
 
-## Começando
+![Relógio Digital](screenshot.png)
 
-No arquivo HTML, criamos o template inicial:
+## Funcionalidades
 
-```html
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+- Exibe a hora atual em formato de relógio digital.
+- Atualiza automaticamente a cada segundo.
 
-    <link rel="stylesheet" href="style.css">
-    <title>Construindo um Relógio Digital</title>
-</head>
-<body>
+## Instalação
 
-    <div class="clock-container"></div>
-    
-    <script src="app.js" ></script>
-</body>
-</html>
+1. Clone este repositório:
+
+```shell
+git clone https://github.com/seu-usuario/seu-projeto.git
 ```
 
-Criamos um estilo inicial também:
+2. Abra o arquivo index.html em um navegador web.
 
-```css
-body {
-    background-color: #212121;
-}
+## Uso
 
-.clock-container {
-    font-size: 4em;
-    text-align: center;
-    margin: 200px auto 0;
-    color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
-}
+- O relógio digital será exibido no centro da página.
+- Ele mostrará as horas, minutos e segundos atualizados em tempo real.
 
-.clock-container span {
-    padding: 20px;
-    background-color: #006ce6;
-    border-radius: 10px;
-}
-```
+## Contribuição
 
-### JavaScript
+Contribuições são bem-vindas! Se você deseja contribuir com este projeto, siga as etapas abaixo:
 
-Agora referenciamos a div.clock-container.
+ 1. Faça um fork deste repositório.
+ 1. Crie uma branch com a sua feature ou correção de bug: git checkout -b minha-feature.
+ 1. Faça as alterações necessárias e adicione os commits: git commit -m "Minha contribuição".
+ 1. Envie as alterações para o repositório remoto: git push origin minha-feature.
+ 1. Abra um pull request descrevendo as alterações propostas.
 
-```js
-const clockContainer = document.querySelector(".clock-container")
-```
+## Licença
 
-Agora criaremos a função que receberá no momento objeto do momento presente.
-
-```js
-const updateCLock = () => {
-    const present = new Date()
-
-    console.log(present) // { hora atual }
-}
-```
-
-Para o relógio precisaremos das `horas`, `minutos` e `segundos`.
-
-```js
-const updateCLock = () => {
-    const present = new Date()
-    const hours = present.getHours()
-    const minutes = present.getMinutes()
-    const seconds = present.getSeconds()
-
-    console.log(hours, minutes, seconds) //output: 20 34 21
-}
-```
-
-Agora que temos o que precisamos vamos inserir no nosso `HTML`:
-
-```js
-const updateCLock = () => {
-    const present = new Date()
-    const hours = present.getHours()
-    const minutes = present.getMinutes()
-    const seconds = present.getSeconds()
-
-    const clockHTML = `
-        <span>${String(hours).length === 1 ? `0${hours}` : hours}</span> : 
-        <span>${String(minutes).length === 1 ? `0${minutes}` : minutes}</span> : 
-        <span>${String(seconds).length === 1 ? `0${seconds}` : seconds}</span>
-    ` // template HTML
-
-    clockContainer.innerHTML = clockHTML // colocamos o template na div.clock-container
-}
-```
-
-E para essa função ser chamada a cada segundo usaremos o `setInterval()`.
-
-```js
-const updateCLock = () => {
-    // ... código
-}
-
-setInterval(updateCLock, 1000) // A cada segundo chama a função.
-```
+Este projeto está licenciado sob a MIT License.
