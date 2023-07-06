@@ -1,32 +1,16 @@
-const clockContainer = document.querySelector(".clock-container")
+const hoursElement = document.getElementById("hours")
+const minutesElement = document.getElementById("minutes")
+const secondsElement = document.getElementById("seconds")
 
-const insertClockInHTML = (hours, minutes, seconds) => {
-    const clockHTML = `
-        <span>${String(hours).length === 1 ? `0${hours}` : hours}</span> : 
-        <span>${String(minutes).length === 1 ? `0${minutes}` : minutes}</span> : 
-        <span>${String(seconds).length === 1 ? `0${seconds}` : seconds}</span>
-    `
-
-    clockContainer.innerHTML = clockHTML
-}
-
-const getCurrentDate = () => {
+const updateClock = () => {
     const present = new Date()
-    const hours = present.getHours()
-    const minutes = present.getMinutes()
-    const seconds = present.getSeconds()
+    const hours = String(present.getHours()).padStart(2, "0")
+    const minutes = String(present.getMinutes()).padStart(2, "0")
+    const seconds = String(present.getSeconds()).padStart(2, "0")
 
-    return {
-        hours, minutes, seconds,
-    }
+    hoursElement.textContent = hours
+    minutesElement.textContent = minutes
+    secondsElement.textContent = seconds
 }
 
-const updateCLock = () => {
-    const {
-        hours, minutes, seconds
-    } = getCurrentDate()
-
-    insertClockInHTML(hours, minutes, seconds)
-}
-
-setInterval(updateCLock, 1000)
+setInterval(updateClock, 1000)
