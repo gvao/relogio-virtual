@@ -2,7 +2,7 @@
 
 Um projeto simples para construir um relógio digital usando HTML, CSS e JavaScript.
 
-![Relógio Digital](screenshot.png)
+![Relógio Digital](/project-apresentation.png)
 
 ## Funcionalidades
 
