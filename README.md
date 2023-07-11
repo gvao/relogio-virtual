@@ -14,7 +14,7 @@ Um projeto simples para construir um relógio digital usando HTML, CSS e JavaScr
 1. Clone este repositório:
 
 ```shell
-git clone https://github.com/seu-usuario/seu-projeto.git
+git clone https://github.com/gvao/relogio-virtual.git
 ```
 
 2. Abra o arquivo index.html em um navegador web.
